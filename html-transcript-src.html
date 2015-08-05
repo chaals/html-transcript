@@ -197,10 +197,9 @@
         solution includes the link to the transcript within the media element for which it is a transcript, and adds a transcript element as
         a container for a transcript. This can be included on the page in which the media object is embedded, which is a common use in
         practice, or can serve to separate multiple transcripts collected in a single page.</p>
-      <p class="issue">It is a goal of this specification to have one agreed mechanism for linking transcripts. Several suggested mechanisms
-        are included here to allow comparison of different approaches. Feedback is sought on whether a given approach should or should not be chosen, and why.</p>
+
       <section>
-        <h3>Approach 1: Extending <code>track</code></h3>
+        <h3>Extending the <code>track</code> element</h3>
         <p>Add <code>transcript</code> to the set of values defined for the <code>kind</code> attribute of the <code>track</code>
           element. This is the simplest change to the existing specification. It would require adding an entry to the <a href="http://www.w3.org/TR/html5/embedded-content-0.html#attr-track-kind">table
             of defined values</a> in [[!HTML5]], as follows:</p>
@@ -244,8 +243,15 @@
 &lt;/<strong>transcript</strong>&gt;</code></pre>
         </section>
       </section>
+    </section>
+	<section>
+	<h2>Appendix A: Alternative approaches</h2>
+
+	      <p class="issue">It is a goal of this specification to have one agreed mechanism for linking transcripts. The preferred approach is described in 5.1 Extending the <code>track</code> element.
+		  <br>
+		  Several suggested alternative mechanisms are included here to allow comparison of different approaches. Feedback is sought on whether a given approach should or should not be chosen, and why.</p>
       <section>
-        <h3>Approach 2: create a new element</h3>
+        <h3>Alternative approach 1: create a new element</h3>
         <p>Add a new element to HTML representing a link to a transcript for the parent media resource. This requires choosing a name - in
           the following we have used <code>relateTranscript</code> as a placeholder name, to avoid conflicting with the proposed <code>transcript</code>
           container element - and defining a new element definition as follows:</p>
@@ -303,7 +309,7 @@
         </section>
       </section>
       <section>
-        <h3>Approach 3: Use the <code>source</code>
+        <h3>Alternative approach 2: Use the <code>source</code>
           <!--Luke--> element</h3>
         <p>The <code>source</code> element represents a version of the media resource that can be presented as an alternative to others.
           This is what a transcript is.</p>
@@ -314,7 +320,7 @@
           transcript.</p>
       </section>
       <section>
-        <h3>Approach 4: Use the <code>a</code> element with <code>rel</code> and <code>for</code> attributes</h3>
+        <h3>Alternative approach 3: Use the <code>a</code> element with <code>rel</code> and <code>for</code> attributes</h3>
         <p>This meets the requirements, but requires defining a new value of <code>rel</code>, and changes to the <code>for</code>
           attribute. </p>
         <p class="issue">Separating the link from the video code requires developers to include it in the visible content of the page, which
@@ -339,7 +345,7 @@
         </section>
       </section>
       <section>
-        <h3>Approach 5: Use an attribute</h3>
+        <h3>Alternative approach 4: Use an attribute</h3>
         <p>An attribute could be defined, analogous to the <code>longdesc</code> attribute for images. </p>
         <p>This approach is not preferred as it makes it very difficult to meet all of the <a href="#req-multiple">multiple transcripts
             requirement</a>. </p>
@@ -355,7 +361,8 @@
 &lt;/<strong>transcript</strong>&gt;</code></pre>
         </section>
       </section>
-    </section>
+	  </section>
+
     <section class="informative">
       <h2>Acknowledgements</h2>
       <p>The editor would like to acknowledge the awe-filled <a href="http://w3.org/respec">respec</a>, <a href="http://github.com">github</a>,
